@@ -1,7 +1,12 @@
-// Default Breakpoint Configuration
+//****** RESPONSIVENESS ******//
+
+// Horizontal Breakpoints
 $breakpoints: (
   mobile: 320px,
   tablet: 768px,
   laptop: 1024px,
   desktop: 1440px
 );
+
+// The point at which the screen goes from being short to call.
+$short-tall-switch-point: 960px;

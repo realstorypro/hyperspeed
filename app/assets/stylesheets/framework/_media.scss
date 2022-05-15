@@ -136,3 +136,16 @@
     }
   }
 }
+
+// Vertical Media Queries
+@mixin tall() {
+  @media(min-height: $short-tall-switch-point + 1px) {
+    @content;
+  }
+}
+
+@mixin short() {
+  @media(max-height: $short-tall-switch-point) {
+    @content;
+  }
+}
