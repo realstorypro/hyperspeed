@@ -18,7 +18,9 @@ gem 'sassc-rails'
 gem 'sprockets-rails'
 
 # UI
-gem 'rapid_ui', path: '~/src/hobbies/rapid_ui'
+# gem 'rapid_ui', path: '~/src/hobbies/rapid_ui'
+
+gem 'rapid_ui'
 gem 'view_component'
 
 # JS Frameworks
