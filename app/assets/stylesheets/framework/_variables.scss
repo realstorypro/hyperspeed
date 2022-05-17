@@ -1,7 +1,25 @@
-// Default Breakpoint Configuration
+//****** RESPONSIVENESS ******//
+
+// Horizontal Breakpoints
 $breakpoints: (
   mobile: 320px,
   tablet: 768px,
   laptop: 1024px,
   desktop: 1440px
 );
+
+// The point at which the screen goes from being short to call.
+$short-tall-switch-point: 960px;
+
+//****** GRID ******//
+
+$grid-prefix: "grid";
+$column-prefix: "column";
+$column-offset-prefix: "offset";
+
+// this is the number of columns
+$default-grid-size: 16;
+
+// additional grid sizes
+$additional-grids-sizes: ();
+
