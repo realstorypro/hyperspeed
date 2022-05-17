@@ -1,0 +1,52 @@
+@mixin make_grid($prefix: '', $columns: 16){
+  $column-size: 100% / $columns;
+
+  .#{$grid-prefix}#{$prefix}{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .row {
+      display: flex
+    }
+
+    @include make_row($columns, $prefix);
+
+    @include mobile(){
+      @include make_row($columns, '-m');
+    }
+
+    @include tablet(){
+      @include make_row($columns, '-t');
+    }
+
+    @include laptop(){
+      @include make_row($columns, '-l');
+    }
+
+    @include desktop(){
+      @include make_row($columns, '-d');
+    }
+  }
+}
+
+@mixin make_row($columns: 16, $prefix: ''){
+  $column-size: 100% / $columns;
+
+  @for $i from 1 through $columns {
+    .#{$column-prefix}#{$prefix}-#{$i}{
+      flex: 0 0 $column-size * $i;
+    }
+    .#{$column-prefix}#{$prefix}-#{$column-offset-prefix}-#{$i}{
+      margin-left: $column-size * $i;
+    }
+  }
+}
+
+// Make Default Grid
+@include make_grid($prefix: '', $columns: $default-grid-size);
+
+// Make Additional Grids
+@each $size in $additional-grids-sizes{
+  @include make_grid($prefix: '-#{$size}', $columns: $size);
+}

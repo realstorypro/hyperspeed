@@ -1,7 +1,17 @@
 // Entry point for your Sass build
 
 @import 'framework/variables';
+
+
+// Variable Overrides
+$grid-prefix: "grid";
+$column-prefix: "column";
+$column-offset-prefix: "offset";
+
+$additional-grids-sizes: (7, 24);
+
 @import 'framework/media';
+@import 'framework/grid';
 
 // Responsive Functions
 
