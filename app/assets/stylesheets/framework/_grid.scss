@@ -10,27 +10,27 @@
       display: flex
     }
 
-    @include make_row($columns, $prefix);
+    @include make_columns($columns, $prefix);
 
     @include mobile(){
-      @include make_row($columns, '-m');
+      @include make_columns($columns, '-m');
     }
 
     @include tablet(){
-      @include make_row($columns, '-t');
+      @include make_columns($columns, '-t');
     }
 
     @include laptop(){
-      @include make_row($columns, '-l');
+      @include make_columns($columns, '-l');
     }
 
     @include desktop(){
-      @include make_row($columns, '-d');
+      @include make_columns($columns, '-d');
     }
   }
 }
 
-@mixin make_row($columns: 16, $prefix: ''){
+@mixin make_columns($columns: 16, $prefix: ''){
   $column-size: 100% / $columns;
 
   @for $i from 1 through $columns {
